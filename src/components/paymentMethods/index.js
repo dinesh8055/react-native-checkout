@@ -26,6 +26,7 @@ export default class PaymentMethods extends Component {
       <View style={this.props.styles.paymentMethodsContainer}>
         <ScrollView automaticallyAdjustContentInsets={false} contentContainerStyle={this.props.styles.paymentMethodsInnerContainer}>
           <View style={this.props.styles.paymentMethodsInnerViewContainer}>
+            <Text> Testing </Text>
             { this.props.enableApplePay
               ? <ApplePay styles={this.props.styles} applePayHandler={this.props.applePayHandler} last={_.isEmpty(this.props.paymentSources)} />
               : null }
