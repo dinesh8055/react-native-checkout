@@ -6,12 +6,14 @@ import ApplePay from './applePay'
 
 export default class PaymentMethods extends Component {
   cards() {
+    console.log(this.props.paymentSources.last4+':'+this.props.selectedCard)
     return (
       _.map(this.props.paymentSources, (paymentSource, i) => {
         return (
           <Card
             selectPaymentHandler={() => this.props.selectPaymentHandler(paymentSource)}
             paymentSource={paymentSource}
+            selectedCard={this.props.selectedCard}
             styles={this.props.styles}
             last={_.last(this.props.paymentSources) === paymentSource}
             key={i}
@@ -26,7 +28,6 @@ export default class PaymentMethods extends Component {
       <View style={this.props.styles.paymentMethodsContainer}>
         <ScrollView automaticallyAdjustContentInsets={false} contentContainerStyle={this.props.styles.paymentMethodsInnerContainer}>
           <View style={this.props.styles.paymentMethodsInnerViewContainer}>
-            <Text> Testing </Text>
             { this.props.enableApplePay
               ? <ApplePay styles={this.props.styles} applePayHandler={this.props.applePayHandler} last={_.isEmpty(this.props.paymentSources)} />
               : null }

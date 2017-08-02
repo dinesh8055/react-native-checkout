@@ -59,5 +59,26 @@ export default ({
     flex: 1,
     backgroundColor: '#F2F2F5',
   },
+  default: {
+    backgroundColor: "grey",
+    borderRadius: 2.5,
+    marginLeft: 8,
+  },
 
+  defaultText: {
+    color: "#fff",
+    paddingLeft: 4,
+    paddingRight: 4,
+  },
+  noDefault: {
+    backgroundColor: "#fff",
+    borderRadius: 2.5,
+    marginRight: 8,
+  },
+
+  noDefaultText: {
+    color: "#fff",
+    paddingLeft: 4,
+    paddingRight: 4,
+  }
 })
